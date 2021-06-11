@@ -1,27 +1,44 @@
-# SerempreWEB
+# SEREMPRE WEB
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
+Aplicativo desarrollado para el puesto laboral de *Frontend* usando Angular, servicios, mocks, interfaces, componentes compartidos, Inputs y otras de las tantas ventajas que nos ofrece el framework.
 
-## Development server
+### Pre-requisitos 📋
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Necesitamos lo siguiente en nuestra maquina:
+* Tener instalado [GIT](https://git-scm.com/).
+* tener instalado [Node y npm](https://nodejs.org/es/)
+* Tener instalado [Angular CLI](https://www.npmjs.com/package/@angular/cli).
+* Paciencia para entenderme. xD ☕☕
 
-## Code scaffolding
+### Instalación 🔧
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* Primero clonamos el proyecto desde este repositorio.
+* Instalamos las dependencias del proyecto con *npm install*
+* Corremos el proyecto de manera local con el comando *ng serve --port 5000*
+* Cuando termine de ejecutar nos dirigimos al navegador e ingresamos *localhost:5000*
+* Listo tendremos el proyecto corriendo y listo para hacer cambios. 🍺🍺
 
-## Build
+## Despliegue 📦
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Se desplego en un ambiente de *heroku*, en la raiz del proyecto se creo un archivo llamado *server.js* el cual usaremos para entregar los archivos de nuestra web.
 
-## Running unit tests
+La url del proyecto es el siguiente: [SEREMPRE-WEB](https://serempre-web.herokuapp.com/)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Construido con 🛠️
 
-## Running end-to-end tests
+AL ser un proyecto de prueba se usaron pocas herramientas
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+* [Angular](http://www.dropwizard.io/1.0.2/docs/) - El framework web usado
+* [SCSS](https://maven.apache.org/) - Preprocesador CSS
+* [HEROKU](https://rometools.github.io/rome/) - Ambiente usado para el despliegue
 
-## Further help
+## Autores ✒️
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+* **Raul Ricardo Balvin Esteban** - *Desarrollador front 🤓*
+
+
+---
+⌨️ Con ❤️ por [Ricardo Balvin](https://github.com/Rk-Hk) 😊
+
+
+

@@ -1,0 +1,38 @@
+{
+    "name": "MOMENTUM True Wireless 2",
+    "description": "Earbuds that put sound first",
+    "price" : "$295.95",
+    "overview": "For the past 75 years, Sennheiser has put sound first. The new MOMENTUM True Wireless 2 is no different. Thanks to leading audio technology and innovation, these new earbuds deliver the best listening experience anytime, anywhere. With improved ergonomics designed for full day wearing and refined touch controls for a more personalised experience, they have been finely crafted for the most discerning listener and aim to simplify your life by enhancing your everyday.",
+    "images": [
+        "../assets/images/product1.png",
+        "../assets/images/product2.png",
+        "../assets/images/product3.png"
+    ],
+
+    "specifications": [
+        {
+            "key": "Dimensions",
+            "value": "76.8 x 43.8 x 34.7 mm (earbuds and charging case)"
+        },
+        {
+            "key": "USB Standard",
+            "value": "USB-C"
+        },
+        {
+            "key": "Power supply",
+            "value": "Sennheiser 7mm dynamic driver"
+        },
+        {
+            "key": "Frequency response (Microphone)",
+            "value": "100 Hz to 10 kHz"
+        },
+        {
+            "key": "Frequency response",
+            "value": "5 - 21,000 Hz"
+        },
+        {
+            "key": "Noise cancellation",
+            "value": "Single-Mic ANC per earbud side"
+        }
+    ]
+}

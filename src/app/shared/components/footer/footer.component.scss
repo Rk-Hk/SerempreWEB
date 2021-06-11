@@ -1,0 +1,58 @@
+footer{
+    margin-top: 73px;
+    background-color: var(--background-color);
+    border-top: var(--border-background-color) solid 1px;
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+
+    .content-resumen {
+        display: flex;
+        margin-top: 40px;
+        justify-content: flex-end;
+    }
+
+    .button-buy {
+        background-color: var(--button-default-color);
+        padding: 16px 24px;
+        color: var(--text-white-color);
+        border-radius: var(--button-border-radio);
+        border: none;
+        margin-left: 32px;
+        &:hover {
+            background-color: var(--button-hover-color);
+        }
+        &:focus {
+            box-shadow: 0 0 0 3px var(--border-focus-color);
+        }
+    }
+
+    .resumen-price {
+        font-weight: 700;
+        color: var(--text-black-color);
+        font-size: 27.65px;
+        margin: 0;
+        text-align: right;
+    }
+
+    .resumen-more-info {
+        font-size: 14px;
+        color: var(--text-color);
+        text-decoration: none;
+        &:hover {
+            color: var(--button-default-color);
+            text-decoration: underline;
+        }
+    }
+    
+}
+
+@media (min-width:768px ) and (max-width: 1280px) {
+    .separador {
+        margin-top: 20px;
+    }
+    .content-resumen {
+        margin-top: 20px !important;
+        margin-bottom: 20px !important;
+    }
+}
