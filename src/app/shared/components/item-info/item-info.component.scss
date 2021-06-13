@@ -43,10 +43,10 @@
     @include styleItem(true);
     @include styleDescription();
 }
+
 .container-item:focus{
     border-color: var(--border-hover-color);
     box-shadow: 0 0 0 3px var(--border-focus-color);
-
 }
 
 .container-item:hover {
