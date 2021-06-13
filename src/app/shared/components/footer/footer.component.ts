@@ -1,16 +1,26 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-footer',
-  templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss']
+  selector: "app-footer",
+  templateUrl: "./footer.component.html",
+  styleUrls: ["./footer.component.scss"],
 })
 export class FooterComponent implements OnInit {
-  @Input() productPrice: string = '$0'
+  @Input() productPrice = 0;
 
-  constructor() { }
+  contentItemsFooter = [
+    {
+      titleItem: "Free Shipping",
+      description: "Get 2-day free shipping anywhere in North America.",
+    },
+    {
+      titleItem: "2 years warranty",
+      description:
+        "If anything goes wrong in the first two years, well replace it for free.",
+    }
+  ];
 
-  ngOnInit() {
-  }
+  constructor() {}
 
+  ngOnInit() {}
 }

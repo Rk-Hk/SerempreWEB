@@ -1,15 +1,15 @@
-<button *ngIf="titleItem && showBorder" class="container-item" [ngClass]="{'active' : active}">
+<button *ngIf="titleItem && showBorder" class="itemInfo container-item" [ngClass]="{'active' : active}">
     <div class="titleItem">
         <p >{{titleItem}}</p>
-        <span *ngIf="aditionalPrice">{{aditionalPrice}}</span>
+        <span *ngIf="aditionalPrice">+ {{aditionalPrice  | currency:'USD':'symbol' }}</span>
     </div>
-    <p *ngIf="descripItem">{{descripItem}}</p>
+    <p class="item__description" *ngIf="descripItem">{{descripItem}}</p>
 </button>
 
-<div *ngIf="titleItem && !showBorder" class="footer-item">
+<div *ngIf="titleItem && !showBorder" class="itemInfo footer-item">
     <div class="titleItem">
         <p >{{titleItem}}</p>
         <span *ngIf="aditionalPrice">{{aditionalPrice}}</span>
     </div>
-    <p class="footer-item-desc" *ngIf="descripItem">{{descripItem}}</p>
+    <p class="footer-item-desc item__description" *ngIf="descripItem">{{descripItem}}</p>
 </div>

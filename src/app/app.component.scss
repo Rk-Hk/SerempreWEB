@@ -86,6 +86,7 @@
 
     .title-description{
         color: var(--text-black-color);
+        font-family: 'CircularStdBold', 'Roboto', 'sans-serif';
         font-size: 19.2px;
         line-height: 1.25;
         font-weight: 500;
@@ -123,7 +124,7 @@
     }
 
     .badget-text {
-        letter-spacing: 2px;
+        // letter-spacing: 2px;
         font-size: 13.33;
         margin-bottom: 8px;
     }

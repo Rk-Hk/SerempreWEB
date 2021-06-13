@@ -1,3 +1,5 @@
+<!-- <app-loader></app-loader> -->
+
 <div style="margin-bottom: 200px;">
   <!-- Seccion Header -->
   <app-header></app-header>
@@ -5,6 +7,7 @@
   <!-- Seccion main content -->
   <div *ngIf="product" class="container main-content">
     <div class="row">
+      <!-- Seccion carousel images -->
       <div class="col-sm-12 col-md-12 col-xl-6 padding-right margin-76">
         <div class="area-sticky">
           <div class="content-image">
@@ -18,28 +21,23 @@
           </div>
 
           <div class="caracteristics col-sm-none">
-            <div>
-              <img src="../assets/images/icons/icon1.png">
-              <p>Customizable Touch Controls</p>
-            </div>
-            <div>
-              <img src="../assets//images/icons/icon2.png">
-              <p>Built-in Equalizer</p>
-            </div>
-            <div>
-              <img src="../assets/images/icons/icon3.png">
-              <p>Active Noise Cancellation</p>
+            <div *ngFor="let caract of product.caracteristics">
+              <img [src]="caract.icon">
+              <p>{{caract.text}}</p>
             </div>
           </div>
         </div>
       </div>
+
+      <!-- Section where show prodcut information -->
       <div class="col-sm-12 col-md-12 col-xl-6 padding-left">
         <p class="badget-text text-pink">NEW RELEASE</p>
         <h2 class="title-general ">{{product.name}}</h2>
         <p class="subtitle-general ">{{product.description}}</p>
         <p class="badget-text">STARTING AT</p>
-        <h2 class="title-general">{{product.price}}</h2>
+        <h2 class="title-general">{{product.price  | currency:'USD':'symbol' }}</h2>
 
+        <!-- Seccion Tab contents -->
         <div class="content-description">
           <div>
             <ul>
@@ -49,66 +47,67 @@
             </ul>
             <div class="content-tab">
               <p *ngIf="currentTab===0">{{product.overview}}</p>
-              <p *ngIf="currentTab===1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam ex illum quo necessitatibus reprehenderit dolore dignissimos obcaecati distinctio odit! Nisi labore rerum esse enim sunt? Libero ex saepe excepturi distinctio.</p>
-              <p *ngIf="currentTab===2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla iste voluptas ea facilis voluptatum quod veniam nam praesentium illum cupiditate! Suscipit voluptatibus eum iure dignissimos impedit. Repellendus similique consequatur tenetur!</p>
+              <p *ngIf="currentTab===1">{{product.features}}</p>
+              <p *ngIf="currentTab===2">{{product.contentBox}}</p>
             </div>
           </div>
         </div>
 
+        <!-- Seccion caracteritics of product -->
         <div class="caracteristics-app ">
-          <div>
-            <img src="../assets/images/icons/icon1.png">
-            <p>Customizable Touch Controls</p>
-          </div>
-          <div>
-            <img src="../assets//images/icons/icon2.png">
-            <p>Built-in Equalizer</p>
-          </div>
-          <div>
-            <img src="../assets/images/icons/icon3.png">
-            <p>Active Noise Cancellation</p>
+          <div *ngFor="let caracteristic of product.caracteristics">
+            <img [src]="caracteristic.icon">
+            <p>{{caracteristic.text}}</p>
           </div>
         </div>
 
-        <p class="title-description">Choose your finish.</p>
-        <div class="row">
-          <div class="col-sm-12 col-md-6 col-xl-6 col-xxl-6">
-            <app-item-info [showBorder]="true" [titleItem]="'Ivory White'" [active]="typeProductSelected===0" (click)="eventTypeProduct(0)"
-             [descripItem]="'For the past 75 years, Sennheiser has put sound first. The new MOMENTUM True. '"
-            ></app-item-info>
+        <!-- Seccion Select Product final -->
+        <section>
+          <p class="title-description">Choose your finish.</p>
+          <div class="row">
+            <div class="col-sm-12 col-md-6 col-xl-6 col-xxl-6">
+              <app-item-info [showBorder]="true" [titleItem]="'Ivory White'" [active]="typeProductSelected===0" (click)="eventTypeProduct(0)"
+              [descripItem]="'For the past 75 years, Sennheiser has put sound first. The new MOMENTUM True. '"
+              ></app-item-info>
+            </div>
+            <div class="col-sm-12 col-md-6 col-xl-6 col-xxl-6">
+              <app-item-info [showBorder]="true" [titleItem]="'Matte Black'" [active]="typeProductSelected===1" (click)="eventTypeProduct(1)"
+              [descripItem]="'Of all of the celestial bodies that capture our attention and fascination as astronomers.'"
+              ></app-item-info>
+            </div>
           </div>
-          <div class="col-sm-12 col-md-6 col-xl-6 col-xxl-6">
-            <app-item-info [showBorder]="true" [titleItem]="'Matte Black'" [active]="typeProductSelected===1" (click)="eventTypeProduct(1)"
-             [descripItem]="'Of all of the celestial bodies that capture our attention and fascination as astronomers.'"
-            ></app-item-info>
+        </section>
+
+        <!-- Section where show warrancy types -->
+        <section>
+          <p class="title-description">Would you like to add extended warranty coverage?.</p>
+          <div class="row">
+            <app-item-info *ngFor="let warrancy of product.warrancyTypes" [showBorder]="true" [titleItem]="warrancy.title" 
+            [active]="warrantySelected && warrantySelected.id===warrancy.id" (click)="eventWarrancy(warrancy)"  [aditionalPrice]="warrancy.price"
+            [descripItem]="warrancy.description"></app-item-info>
           </div>
-        </div>
+        </section>
 
-        <p class="title-description">Would you like to add extended warranty coverage?.</p>
-        <div class="row">
-          <app-item-info [showBorder]="true" [titleItem]="'2 years coverage'" [active]="warrantySelected===0" (click)="eventWarrancy(0)"
-          [descripItem]="'For the past 75 years, Sennheiser has put sound first.'"></app-item-info>
-
-          <app-item-info [showBorder]="true" [titleItem]="'3 years coverage'" [active]="warrantySelected===1" (click)="eventWarrancy(1)"
-          [descripItem]="'For the past 75 years, Sennheiser has put sound first.'"></app-item-info>
-        </div>
-
-        <p class="title-description">Features.</p>
-        <div class="row">
-          <app-item-info [showBorder]="true" [titleItem]="'Voice Assistant support'" [active]="featureSelected===0" (click)="eventFeature(0)"></app-item-info>
-
-          <app-item-info [showBorder]="true" [titleItem]="'Customizable controls'" [aditionalPrice]="'+ $25'" [active]="featureSelected===1" (click)="eventFeature(1)"></app-item-info>
-        </div>
+        <!-- Section list features -->
+        <section> 
+          <p class="title-description">Features.</p>
+          <div class="row">
+            <app-item-info *ngFor="let feats of product.listFeatures" [showBorder]="true" [titleItem]="feats.title" 
+              [aditionalPrice]="feats.price" [active]="featureSelected && featureSelected.id===feats.id" (click)="eventFeature(feats)">
+            </app-item-info>
+          </div>
+        </section>
         
-        <p class="title-description">Specifications.</p>
-        <ul class="specifications" *ngIf="product.specifications">
-          <li *ngFor= "let item of product.specifications">
-            <p class="text-black">{{item.key}}</p>
-            <p class="text-black">{{item.value}}</p>
-          </li>
-        </ul>
-
-
+        <!-- Section of specifications -->
+        <section>
+          <p class="title-description">Specifications.</p>
+          <ul class="specifications" *ngIf="product.specifications">
+            <li *ngFor= "let item of product.specifications">
+              <p class="text-black">{{item.key}}</p>
+              <p class="text-black">{{item.value}}</p>
+            </li>
+          </ul>
+        </section>
       </div>
     </div>
     
@@ -116,5 +115,5 @@
   </div>
 
   <!-- Seccion Footer -->
-  <app-footer [productPrice]="product ? product.price : '$0'"></app-footer>
+  <app-footer [productPrice]="amountTotal"></app-footer>
 </div>

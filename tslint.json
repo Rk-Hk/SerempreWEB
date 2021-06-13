@@ -6,6 +6,7 @@
     "deprecation": {
       "severity": "warning"
     },
+    "semicolon": [true, "always", "strict-bound-class-methods"],
     "component-class-suffix": true,
     "contextual-lifecycle": true,
     "directive-class-suffix": true,
@@ -69,7 +70,7 @@
     "ordered-imports": false,
     "quotemark": [
       true,
-      "single"
+      "double"
     ],
     "trailing-comma": false,
     "no-conflicting-lifecycle": true,

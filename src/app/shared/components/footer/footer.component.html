@@ -1,30 +1,29 @@
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-none col-md-6 col-xl-6">
-                <div class="row separador">
-                    <!-- <div class="center-content"> -->
-                        <div class="col-md-12 col-xl-6">
-                            <app-item-info [titleItem]="'Free Shipping'" 
-                                [descripItem]="'Get 2-day free shipping anywhere in North America.'"></app-item-info>
-                        </div>
-                        <div class="col-md-12 col-xl-6">
-                            
-                            <app-item-info [titleItem]="'2 years warranty'" 
-                                [descripItem]="'If anything goes wrong in the first two years, well replace it for free.'"></app-item-info>
-                        </div>
-                    <!-- </div> -->
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-6 col-xl-6">
-                <div class="content-resumen separador">
-                    <div>
-                        <p class="resumen-price">{{productPrice}}</p>
-                        <a class="resumen-more-info" href="#">Need financing? Learn more </a>
-                    </div>
-                    <button class="button-buy">Buy now</button>
-                </div>
-            </div>
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-none col-md-6 col-xl-6 footer__display-info">
+        <div class="row separador">
+          <div class="col-md-12 col-xl-6" *ngFor="let item of contentItemsFooter">
+            <app-item-info 
+              [titleItem]="item.titleItem"
+              [descripItem]="item.description"
+            ></app-item-info>
+          </div>
         </div>
+      </div>
+      <div class="col-sm-12 col-md-6 col-xl-6">
+        <div class="content-resumen separador footer__display-buy">
+          <div>
+            <p class="resumen-price">
+              {{ productPrice | currency: "USD":"symbol" }}
+            </p>
+            <a class="resumen-more-info" href="#"
+              >Need financing? Learn more
+            </a>
+          </div>
+          <button class="button-buy">Buy now</button>
+        </div>
+      </div>
     </div>
+  </div>
 </footer>
