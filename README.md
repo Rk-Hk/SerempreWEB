@@ -12,11 +12,17 @@ Necesitamos lo siguiente en nuestra maquina:
 
 ### Instalación 🔧
 
-* Primero clonamos el proyecto desde este repositorio.
+* Primero clonamos el proyecto desde este repositorio **https://github.com/Rk-Hk/SerempreWEB.git**.
 * Instalamos las dependencias del proyecto con *npm install*
-* Corremos el proyecto de manera local con el comando *ng serve --port 5000*
+* Corremos el proyecto de manera local con el comando *ng serve --port 5000 -o*
 * Cuando termine de ejecutar nos dirigimos al navegador e ingresamos *localhost:5000*
 * Listo tendremos el proyecto corriendo y listo para hacer cambios. 🍺🍺
+
+## Ejecucion de pruebas
+
+* El las pruebas estan en cada archivo spect del proyecto
+* Para correr las pruebas que fueron realizadas usamos el comando *ng test*
+* Para obtener la cobertura de las pruebas usamos el comando *ng test --code-coverage*
 
 ## Despliegue 📦
 
@@ -31,6 +37,7 @@ AL ser un proyecto de prueba se usaron pocas herramientas
 * [Angular](http://www.dropwizard.io/1.0.2/docs/) - El framework web usado
 * [SCSS](https://maven.apache.org/) - Preprocesador CSS
 * [HEROKU](https://rometools.github.io/rome/) - Ambiente usado para el despliegue
+* [JASMINE](https://rometools.github.io/rome/) - Framework usado para las pruebas unitarias
 
 ## Autores ✒️
 

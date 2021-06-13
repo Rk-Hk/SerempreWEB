@@ -1,0 +1,119 @@
+<!-- <app-loader></app-loader> -->
+
+<div style="margin-bottom: 200px;">
+    <!-- Seccion Header -->
+    <app-header></app-header>
+  
+    <!-- Seccion main content -->
+    <div *ngIf="product" class="container main-content">
+      <div class="row">
+        <!-- Seccion carousel images -->
+        <div class="col-sm-12 col-md-12 col-xl-6 padding-right margin-76">
+          <div class="area-sticky">
+            <div class="content-image">
+              <img loading="lazy" class="product-image" [src]="imageSelected">
+            </div>
+    
+            <div class="carrousel">
+              <button *ngFor="let image of product.images" [ngClass]="{'active': image===imageSelected}" class="content-image"  (click)="eventSelectImage(image)">
+                <img loading="lazy" class="mini-image" [src] = "image">
+              </button>
+            </div>
+  
+            <div class="caracteristics col-sm-none">
+              <div *ngFor="let caract of product.caracteristics">
+                <img [src]="caract.icon">
+                <p>{{caract.text}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Section where show prodcut information -->
+        <div class="col-sm-12 col-md-12 col-xl-6 padding-left">
+          <p class="badget-text text-pink">NEW RELEASE</p>
+          <h2 class="title-general ">{{product.name}}</h2>
+          <p class="subtitle-general ">{{product.description}}</p>
+          <p class="badget-text">STARTING AT</p>
+          <h2 class="title-general">{{product.price  | currency:'USD':'symbol' }}</h2>
+  
+          <!-- Seccion Tab contents -->
+          <div class="content-description">
+            <div>
+              <ul>
+                <li [ngClass]="{'active': currentTab === 0}" class="tab-item" (click)="eventSelectTabs(0)">Overview</li>
+                <li [ngClass]="{'active': currentTab === 1}" class="tab-item" (click)="eventSelectTabs(1)">Features</li>
+                <li [ngClass]="{'active': currentTab === 2}" class="tab-item" (click)="eventSelectTabs(2)">What's in the box</li>
+              </ul>
+              <div class="content-tab">
+                <p *ngIf="currentTab===0">{{product.overview}}</p>
+                <p *ngIf="currentTab===1">{{product.features}}</p>
+                <p *ngIf="currentTab===2">{{product.contentBox}}</p>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Seccion caracteritics of product -->
+          <div class="caracteristics-app ">
+            <div *ngFor="let caracteristic of product.caracteristics">
+              <img [src]="caracteristic.icon">
+              <p>{{caracteristic.text}}</p>
+            </div>
+          </div>
+  
+          <!-- Seccion Select Product final -->
+          <section>
+            <p class="title-description">Choose your finish.</p>
+            <div class="row">
+              <div class="col-sm-12 col-md-6 col-xl-6 col-xxl-6">
+                <app-item-info [showBorder]="true" [titleItem]="'Ivory White'" [active]="typeProductSelected===0" (click)="eventTypeProduct(0)"
+                [descripItem]="'For the past 75 years, Sennheiser has put sound first. The new MOMENTUM True. '"
+                ></app-item-info>
+              </div>
+              <div class="col-sm-12 col-md-6 col-xl-6 col-xxl-6">
+                <app-item-info [showBorder]="true" [titleItem]="'Matte Black'" [active]="typeProductSelected===1" (click)="eventTypeProduct(1)"
+                [descripItem]="'Of all of the celestial bodies that capture our attention and fascination as astronomers.'"
+                ></app-item-info>
+              </div>
+            </div>
+          </section>
+  
+          <!-- Section where show warrancy types -->
+          <section>
+            <p class="title-description">Would you like to add extended warranty coverage?.</p>
+            <div class="row">
+              <app-item-info *ngFor="let warrancy of product.warrancyTypes" [showBorder]="true" [titleItem]="warrancy.title" 
+              [active]="warrantySelected && warrantySelected.id===warrancy.id" (click)="eventWarrancy(warrancy)"  [aditionalPrice]="warrancy.price"
+              [descripItem]="warrancy.description"></app-item-info>
+            </div>
+          </section>
+  
+          <!-- Section list features -->
+          <section> 
+            <p class="title-description">Features.</p>
+            <div class="row">
+              <app-item-info *ngFor="let feats of product.listFeatures" [showBorder]="true" [titleItem]="feats.title" 
+                [aditionalPrice]="feats.price" [active]="featureSelected && featureSelected.id===feats.id" (click)="eventFeature(feats)">
+              </app-item-info>
+            </div>
+          </section>
+          
+          <!-- Section of specifications -->
+          <section>
+            <p class="title-description">Specifications.</p>
+            <ul class="specifications" *ngIf="product.specifications">
+              <li *ngFor= "let item of product.specifications">
+                <p class="text-black">{{item.key}}</p>
+                <p class="text-black">{{item.value}}</p>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+      
+      
+    </div>
+  
+    <!-- Seccion Footer -->
+    <app-footer [productPrice]="amountTotal"></app-footer>
+  </div>
