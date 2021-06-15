@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="section-buttons">
+        <button class="button-buy" (click)="prevPhotos()"> Atrás</button>
+        <button class="button-buy" (click)="nextPhotos()">Siguiente</button>
+    </div>
+    <div class="row">
+        <div class="container__card" *ngFor="let photo of listPhotos">
+            <app-photo  [photoDetail] = "photo"></app-photo>
+        </div>
+    </div>
+</div>

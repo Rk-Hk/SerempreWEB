@@ -12,20 +12,7 @@ footer{
         justify-content: flex-end;
     }
 
-    .button-buy {
-        background-color: var(--button-default-color);
-        padding: 16px 24px;
-        color: var(--text-white-color);
-        border-radius: var(--button-border-radio);
-        border: none;
-        margin-left: 32px;
-        &:hover {
-            background-color: var(--button-hover-color);
-        }
-        &:focus {
-            box-shadow: 0 0 0 3px var(--border-focus-color);
-        }
-    }
+    
 
     .resumen-price {
         font-weight: 700;

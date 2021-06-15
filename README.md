@@ -39,6 +39,9 @@ AL ser un proyecto de prueba se usaron pocas herramientas
 * [HEROKU](https://rometools.github.io/rome/) - Ambiente usado para el despliegue
 * [JASMINE](https://rometools.github.io/rome/) - Framework usado para las pruebas unitarias
 
+## Prueba tecnica presencial
+* Se implento la galery de imagenes en la ruta : /galery
+
 ## Autores ✒️
 
 * **Raul Ricardo Balvin Esteban** - *Desarrollador front 🤓*
